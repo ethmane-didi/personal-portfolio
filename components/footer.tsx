@@ -12,7 +12,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/YourProfile/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-2xl text-gray-500 hover:text-blue-600 transition-colors duration-300">
                 <FaLinkedin />
             </a>
-            <a href="https://github.com/YourUsername" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-2xl text-gray-500 hover:text-black transition-colors duration-300">
+            <a href="https://github.com/ethmane-didi" target="_blank" rel="noopener noreferrer" aria-label="Github" className="text-2xl text-gray-500 hover:text-black transition-colors duration-300">
                 <FaGithub />
             </a>
         </div>

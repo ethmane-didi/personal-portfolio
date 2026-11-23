@@ -362,9 +362,9 @@ export default function GetHiredPage() {
               variants={fadeUp}
               className="font-[family-name:var(--font-bricolage)] text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#1a1a2e] mb-7"
             >
-              Five apps shipped{' '}
+              From idea to working&nbsp;apps.{' '}
               <em
-                className="not-italic"
+                className="not-italic md:block"
                 style={{
                   background: 'linear-gradient(90deg, #ff5c35 0%, #ff8c42 100%)',
                   WebkitBackgroundClip: 'text',
@@ -372,19 +372,26 @@ export default function GetHiredPage() {
                   backgroundClip: 'text',
                 }}
               >
-                solo.
-              </em>{' '}
-              One hit 800 users before launch.
+                Built independently.
+              </em>
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p
+            <motion.div
               variants={fadeUp}
-              className="text-[1.05rem] leading-[1.75] text-[#6b6560] font-light max-w-[460px] mb-10"
+              className="flex flex-col gap-4 text-[1.05rem] leading-[1.75] text-[#6b6560] font-light max-w-[540px] mb-10"
             >
-              Auth, payments, real-time data — built alone, end to end.
-              Now ready to build yours.
-            </motion.p>
+              <p>
+                I&apos;ve designed and developed web and mobile applications using
+                React, Next.js, TypeScript, Flutter, and AWS — working across
+                UI/UX, authentication, payments, and application functionality.
+              </p>
+              <p>
+                Now I&apos;m ready to bring that experience into a professional team,
+                collaborate with other developers, and build products people love
+                to&nbsp;use.
+              </p>
+            </motion.div>
 
             {/* CTAs */}
             <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
@@ -722,7 +729,7 @@ export default function GetHiredPage() {
               </a>
 
               <a
-                href="https://github.com/Ousman37"
+                href="https://github.com/ethmane-didi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3.5 text-white/70 hover:text-white text-sm no-underline transition-colors"
@@ -730,7 +737,7 @@ export default function GetHiredPage() {
                 <span className="w-10 h-10 rounded-xl bg-white/[0.08] flex items-center justify-center flex-shrink-0">
                   <FaGithubSquare className="text-base" />
                 </span>
-                GitHub — Ousman37
+                GitHub — ethmane-didi
               </a>
             </div>
           </div>
@@ -848,7 +855,7 @@ export default function GetHiredPage() {
         <div className="flex gap-8">
           {[
             { label: 'Portfolio', href: '/' },
-            { label: 'GitHub',    href: 'https://github.com/Ousman37' },
+            { label: 'GitHub',    href: 'https://github.com/ethmane-didi' },
             { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/ethmane-ousman-34885844/' },
             { label: 'CV',        href: '/EthmaneDidi_Jr Frontend Developer-CV.pdf' },
           ].map((link) => (

@@ -108,7 +108,7 @@ const Intro = () => {
           <BsLinkedin />
         </a>
         <a
-          href="https://github.com/Ousman37"
+          href="https://github.com/ethmane-didi"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full transition-transform duration-300 ease-in-out hover:scale-110 active:scale-95 border border-gray-200 dark:border-transparent"

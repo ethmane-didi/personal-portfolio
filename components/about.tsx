@@ -55,7 +55,7 @@ const About = () => {
         </a>
         or
         <a
-          href="https://github.com/Ousman37"
+          href="https://github.com/ethmane-didi"
           className="text-blue-500 underline"
         >
           <i className="fab fa-github" aria-hidden="true"></i>

@@ -1,13 +1,13 @@
 # Personal Portfolio
 
-![Portfolio Screenshot](https://github.com/Ousman37/personal-portfolio/blob/main/Screenshot.png?raw=true)
+![Portfolio Screenshot](https://github.com/ethmane-didi/personal-portfolio/blob/main/Screenshot.png?raw=true)
 
 
 
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/YourUsername/personal-portfolio.svg)](https://github.com/YourUsername/personal-portfolio/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/YourUsername/personal-portfolio.svg)](https://github.com/YourUsername/personal-portfolio/network/members)
+[![GitHub Stars](https://img.shields.io/github/stars/ethmane-didi/personal-portfolio.svg)](https://github.com/ethmane-didi/personal-portfolio/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/ethmane-didi/personal-portfolio.svg)](https://github.com/ethmane-didi/personal-portfolio/network/members)
 
 ## Description
 
@@ -39,7 +39,7 @@ Welcome to my personal portfolio project! This is where I showcase my web develo
 
 To get started with this project, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/YourUsername/personal-portfolio.git`
+1. Clone this repository: `git clone https://github.com/ethmane-didi/personal-portfolio.git`
 2. Navigate to the project folder: `cd personal-portfolio`
 3. Install dependencies: `npm install`
 4. Run the development server: `npm run dev`
@@ -50,7 +50,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-- [Ethmane](https://github.com/YourUsername)
+- [Ethmane](https://github.com/ethmane-didi)
 
 Feel free to reach out if you have any questions or would like to collaborate!
 

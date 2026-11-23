@@ -114,7 +114,7 @@ export const projectsData: readonly ProjectData[] = [
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Authentication'],
     imageUrl: focusflowImg,
     liveDemoLink: 'https://focusflow-app.vercel.app/',
-    githubLink: 'https://github.com/Ousman37/focusflow',
+    githubLink: 'https://github.com/ethmane-didi/focusflow-web',
   },
   {
     title: 'VoyageIQ — Luxury Travel Explorer',
@@ -124,7 +124,7 @@ export const projectsData: readonly ProjectData[] = [
     tags: ['Next.js', 'TypeScript', 'REST APIs', 'API Integration'],
     imageUrl: voyageiqImg,
     liveDemoLink: 'https://vacation-explorer.vercel.app/',
-    githubLink: 'https://github.com/Ousman37/VacationExplorer',
+    githubLink: 'https://github.com/ethmane-didi/VacationExplorer',
   },
   {
     title: 'BidSpace — Online Auction Platform',
@@ -134,7 +134,7 @@ export const projectsData: readonly ProjectData[] = [
     tags: ['JavaScript', 'HTML/CSS', 'Responsive Design', 'Authentication'],
     imageUrl: bidspaceImg,
     liveDemoLink: 'https://visionary-sprite-8c6f10.netlify.app/',
-    githubLink: 'https://github.com/Ousman37/auction-platform-sp2',
+    githubLink: 'https://github.com/ethmane-didi/auction-platform-sp2',
   },
   {
     title: 'FRV Froova — Brand & E-Commerce',
@@ -144,7 +144,7 @@ export const projectsData: readonly ProjectData[] = [
     tags: ['Next.js', 'Prismic CMS', 'TypeScript', 'E-Commerce'],
     imageUrl: frvFroovaImg,
     liveDemoLink: 'https://frv.vercel.app/',
-    githubLink: 'https://github.com/Ousman37/frv-froova',
+    githubLink: 'https://github.com/ethmane-didi/froova',
   },
   {
     title: 'DataLens — Analytics Dashboard',
@@ -154,7 +154,7 @@ export const projectsData: readonly ProjectData[] = [
     tags: ['React', 'Express.js', 'MongoDB', 'Recharts'],
     imageUrl: datalensImg,
     liveDemoLink: 'https://dashboard-app-plum-five.vercel.app/',
-    githubLink: 'https://github.com/Ousman37/dashboard-app',
+    githubLink: 'https://github.com/ethmane-didi/dashboard-app',
   },
   {
     title: 'Wishlishly — iOS Wishlist App',
@@ -164,7 +164,7 @@ export const projectsData: readonly ProjectData[] = [
     tags: ['Flutter', 'iOS', 'Dart', 'App Store'],
     imageUrl: wishlishlyImg,
     liveDemoLink: 'https://apps.apple.com/no/app/wishly-wishlist-gifts/id6755959823',
-    githubLink: 'https://github.com/Ousman37/wishlishly',
+    githubLink: '',
   },
   {
     title: 'Replyo — AI Chat Assistant for Business',
