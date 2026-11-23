@@ -60,8 +60,8 @@ export const projectsData: readonly ProjectData[] = [
     title: 'HERE — Make Real Plans',
     category: 'Mobile App / Product Development',
     description:
-      'A social discovery app for meeting people nearby through real-world plans like coffee, walks, coworking, and dining. Users share their availability, create plans, and connect only through mutual approval, with privacy-first approximate location instead of exact pins.',
-    tags: ['Flutter', 'Dart', 'Supabase', 'Riverpod', 'Mapbox'],
+      'A social discovery app built with Flutter that helps people connect through real-world activities such as coffee, walks, and coworking. Users can discover nearby people, share availability, and make plans, with a focus on privacy and meaningful real-life connections.',
+    tags: ['Flutter'],
     imageUrl: hereImg,
     imageAlt:
       'HERE landing page with the headline \'Meet people nearby. Make real plans.\' beside an iPhone mockup of the app home screen showing a map of nearby people in Oslo',
@@ -85,8 +85,8 @@ export const projectsData: readonly ProjectData[] = [
     title: 'Coffee Pre-order',
     category: 'Web Application / E-commerce',
     description:
-      'An online coffee ordering demo that makes ordering ahead simple. Customers browse the menu, add drinks to their cart, and complete a simulated checkout with Stripe test payments. Built around intuitive navigation, a clean shopping flow, and a mobile-friendly interface.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Stripe'],
+      'A coffee pre-ordering web application built with Next.js and AWS. Customers can browse the menu, add products to their cart, and complete checkout using test payments. The application focuses on responsive design and a smooth, user-friendly ordering experience.',
+    tags: ['Next.js', 'AWS'],
     imageUrl: coffeePreorderImg,
     imageAlt:
       'Coffee Pre-order homepage with the headline \'Skip the queue.\', an Order now button, and a takeaway coffee cup beside a phone showing the ordering app',
