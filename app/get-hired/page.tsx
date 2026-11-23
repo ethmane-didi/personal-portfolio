@@ -91,6 +91,32 @@ const steps = [
 
 // ── Bento project card ─────────────────────────────────────────────────────────
 
+// Row layouts (column spans on the 3-column md+ grid), repeated for as many
+// projects as exist so every project is shown.
+const BENTO_ROWS: readonly (readonly number[])[] = [
+  [2, 1], // wide + single
+  [1, 2], // single + wide
+  [1, 1, 1], // three equal
+];
+
+const COL_SPAN_CLASS: Record<number, string> = {
+  1: 'md:col-span-1',
+  2: 'md:col-span-2',
+  3: 'md:col-span-3',
+};
+
+/** Column span per project; an incomplete final row stretches its last card to fill the row. */
+function bentoSpans(count: number): number[] {
+  const spans: number[] = [];
+  for (let r = 0; spans.length < count; r++) {
+    const row = BENTO_ROWS[r % BENTO_ROWS.length].slice(0, count - spans.length);
+    const used = row.reduce((sum, s) => sum + s, 0);
+    row[row.length - 1] += 3 - used;
+    spans.push(...row);
+  }
+  return spans;
+}
+
 type BentoCardProps = {
   project: typeof projectsData[number];
   i: number;
@@ -108,15 +134,16 @@ function BentoCard({ project, i, className = '', featured = false }: BentoCardPr
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -6 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: i * 0.07, ease: 'easeOut' }}
+      transition={{ duration: 0.4, delay: (i % 3) * 0.07, ease: 'easeOut' }}
       className={`group relative flex flex-col justify-end rounded-2xl overflow-hidden cursor-pointer border border-white/[0.08] hover:border-white/20 transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_24px_64px_rgba(0,0,0,0.5)] ${className}`}
     >
       {/* Screenshot — fills the whole card */}
       <Image
         src={project.imageUrl}
-        alt={project.title}
+        alt={project.imageAlt ?? `Screenshot of ${project.title}`}
         fill
-        className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+        style={{ objectPosition: project.imagePosition ?? 'center top' }}
+        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
 
@@ -138,6 +165,11 @@ function BentoCard({ project, i, className = '', featured = false }: BentoCardPr
             </span>
           ))}
         </div>
+
+        {/* Category */}
+        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#ff8c42]/80 mb-1">
+          {project.category}
+        </p>
 
         {/* Title */}
         <h3 className={`font-[family-name:var(--font-bricolage)] font-bold text-white leading-snug group-hover:text-[#ff8c42] transition-colors duration-300 ${featured ? 'text-xl md:text-2xl' : 'text-base md:text-lg'}`}>
@@ -567,16 +599,16 @@ export default function GetHiredPage() {
             Projects I&apos;ve built
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:auto-rows-[320px]">
-            {/* Row 1: wide + tall */}
-            {projectsData[0] && <BentoCard project={projectsData[0]} i={0} className="md:col-span-2" featured />}
-            {projectsData[1] && <BentoCard project={projectsData[1]} i={1} className="md:col-span-1" />}
-            {/* Row 2: single + wide */}
-            {projectsData[2] && <BentoCard project={projectsData[2]} i={2} className="md:col-span-1" />}
-            {projectsData[3] && <BentoCard project={projectsData[3]} i={3} className="md:col-span-2" featured />}
-            {/* Row 3: three equal */}
-            {projectsData[4] && <BentoCard project={projectsData[4]} i={4} className="md:col-span-1" />}
-            {projectsData[5] && <BentoCard project={projectsData[5]} i={5} className="md:col-span-1" />}
-            {projectsData[6] && <BentoCard project={projectsData[6]} i={6} className="md:col-span-1" />}
+            {/* Rows cycle: wide + single, single + wide, three equal */}
+            {bentoSpans(projectsData.length).map((span, i) => (
+              <BentoCard
+                key={projectsData[i].title}
+                project={projectsData[i]}
+                i={i}
+                className={COL_SPAN_CLASS[span]}
+                featured={span > 1}
+              />
+            ))}
           </div>
         </div>
       </section>

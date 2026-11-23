@@ -1,4 +1,5 @@
 import React from 'react';
+import type { StaticImageData } from 'next/image';
 import { LuGraduationCap } from 'react-icons/lu';
 import focusflowImg from '@/public/focusflow.png';
 import voyageiqImg from '@/public/voyageiq.png';
@@ -6,9 +7,12 @@ import bidspaceImg from '@/public/bidspace.png';
 import frvFroovaImg from '@/public/frv-froova.png';
 import datalensImg from '@/public/datalens.png';
 import wishlishlyImg from '@/public/wishlishly.png';
-import reUniqueImg from '@/public/re-unique.png';
 import mollifyImg from '@/public/mollify.png';
 import replyoImg from '@/public/replyo.png';
+import hereImg from '@/public/here.webp';
+import readerImg from '@/public/reader.webp';
+import coffeePreorderImg from '@/public/coffee-preorder.webp';
+import beUniqueImg from '@/public/beunique.webp';
 
 export const links = [
   {
@@ -37,9 +41,74 @@ export const links = [
   },
 ] as const;
 
-export const projectsData = [
+export type ProjectData = {
+  title: string;
+  category: string;
+  description: string;
+  tags: readonly string[];
+  imageUrl: StaticImageData;
+  /** Descriptive alt text; cards fall back to "Screenshot of <title>". */
+  imageAlt?: string;
+  /** CSS object-position for the cover-cropped image; defaults to "center top". */
+  imagePosition?: string;
+  liveDemoLink: string;
+  githubLink: string;
+};
+
+export const projectsData: readonly ProjectData[] = [
+  {
+    title: 'HERE — Make Real Plans',
+    category: 'Mobile App / Product Development',
+    description:
+      'A social discovery app for meeting people nearby through real-world plans like coffee, walks, coworking, and dining. Users share their availability, create plans, and connect only through mutual approval, with privacy-first approximate location instead of exact pins.',
+    tags: ['Flutter', 'Dart', 'Supabase', 'Riverpod', 'Mapbox'],
+    imageUrl: hereImg,
+    imageAlt:
+      'HERE landing page with the headline \'Meet people nearby. Make real plans.\' beside an iPhone mockup of the app home screen showing a map of nearby people in Oslo',
+    liveDemoLink: 'https://hereplans.app/',
+    githubLink: '',
+  },
+  {
+    title: 'Reader — Text to Speech',
+    category: 'Web Application / Accessibility',
+    description:
+      'A browser-based text-to-speech app that turns written content into spoken audio. Paste text or upload PDF and TXT files, choose a voice, adjust playback speed, and follow along with synchronized sentence highlighting. Includes a private reading library and saved progress.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'PDF.js'],
+    imageUrl: readerImg,
+    imageAlt:
+      'Reader landing page with the headline \'Listen to anything you need to read.\' and a panel for previewing the text-to-speech voices available on the device',
+    imagePosition: 'left top',
+    liveDemoLink: 'https://tts-saasvercelapp.vercel.app/',
+    githubLink: '',
+  },
+  {
+    title: 'Coffee Pre-order',
+    category: 'Web Application / E-commerce',
+    description:
+      'An online coffee ordering demo that makes ordering ahead simple. Customers browse the menu, add drinks to their cart, and complete a simulated checkout with Stripe test payments. Built around intuitive navigation, a clean shopping flow, and a mobile-friendly interface.',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Stripe'],
+    imageUrl: coffeePreorderImg,
+    imageAlt:
+      'Coffee Pre-order homepage with the headline \'Skip the queue.\', an Order now button, and a takeaway coffee cup beside a phone showing the ordering app',
+    imagePosition: 'left top',
+    liveDemoLink: 'https://coffee-preorder.vercel.app/',
+    githubLink: '',
+  },
+  {
+    title: 'BeUnique — E-commerce Store',
+    category: 'React / E-commerce',
+    description:
+      'A React storefront that loads products from a REST API. Features live product search, product pages with discount pricing, a cart with quantity controls and totals, a checkout flow, and a contact form validated with react-hook-form and Yup.',
+    tags: ['React', 'React Router', 'styled-components', 'react-hook-form'],
+    imageUrl: beUniqueImg,
+    imageAlt:
+      'BeUnique storefront with a product search bar and product cards for vanilla perfume, a toy car, and gold headphones, each with a rating and a View Product button',
+    liveDemoLink: 'https://react-ecom-store-psi.vercel.app/',
+    githubLink: 'https://github.com/ethmane-didi/react-ecom-store',
+  },
   {
     title: 'FocusFlow — Productivity SaaS',
+    category: 'Web Application / Productivity',
     description:
       'A full-featured productivity web app inspired by the Hyperfocus method. Two focus modes: deep work timer with distraction blocking, and a free-form idea capture journal. Includes mood tracking, habit streaks, badges, and a freemium pricing model.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Authentication'],
@@ -49,6 +118,7 @@ export const projectsData = [
   },
   {
     title: 'VoyageIQ — Luxury Travel Explorer',
+    category: 'Web Application / Travel',
     description:
       'A travel planning app featuring curated luxury property listings with rich photography, location filters, and live weather and country data. Users browse destinations like Paris, Switzerland, and Amsterdam with real-time information to plan their perfect trip.',
     tags: ['Next.js', 'TypeScript', 'REST APIs', 'API Integration'],
@@ -58,6 +128,7 @@ export const projectsData = [
   },
   {
     title: 'BidSpace — Online Auction Platform',
+    category: 'Web Application / Marketplace',
     description:
       'A fully functional auction web app where users register, list items, and compete in real-time bidding. Features a credit-based economy, user authentication, curated listings, and a clean responsive layout designed to build trust around every bid.',
     tags: ['JavaScript', 'HTML/CSS', 'Responsive Design', 'Authentication'],
@@ -67,6 +138,7 @@ export const projectsData = [
   },
   {
     title: 'FRV Froova — Brand & E-Commerce',
+    category: 'Marketing Site / E-commerce',
     description:
       'A bold product marketing site for a probiotic soda brand. Built with Next.js and powered by Prismic CMS. Features product showcases, flavor browsing, subscription pricing, and a vibrant design system that perfectly matches the brand identity.',
     tags: ['Next.js', 'Prismic CMS', 'TypeScript', 'E-Commerce'],
@@ -76,6 +148,7 @@ export const projectsData = [
   },
   {
     title: 'DataLens — Analytics Dashboard',
+    category: 'Full-Stack / Data Visualization',
     description:
       'A full-stack analytics dashboard with a dark UI featuring colorful KPI cards, real-time line charts, and pie chart breakdowns. Built to visualize and explore datasets in an intuitive, data-dense interface backed by a Node.js/MongoDB API.',
     tags: ['React', 'Express.js', 'MongoDB', 'Recharts'],
@@ -85,6 +158,7 @@ export const projectsData = [
   },
   {
     title: 'Wishlishly — iOS Wishlist App',
+    category: 'Mobile App / iOS',
     description:
       'A native iOS app built with Flutter that lets users create, organize, and share wishlists with friends and family. Features a clean UI, real-time list sharing, and a seamless cross-device experience. Live on the Apple App Store.',
     tags: ['Flutter', 'iOS', 'Dart', 'App Store'],
@@ -94,6 +168,7 @@ export const projectsData = [
   },
   {
     title: 'Replyo — AI Chat Assistant for Business',
+    category: 'SaaS / AI',
     description:
       'A production-ready SaaS landing page for an AI-powered customer support and booking assistant. Built with Next.js, TypeScript, and Tailwind CSS — featuring a responsive UI, animated chat demo, pricing tiers, and multi-language support. Designed for restaurants, clinics, and service businesses.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'AI', 'SaaS'],
@@ -103,6 +178,7 @@ export const projectsData = [
   },
   {
     title: 'Mollify — Open-Source Learning Platform',
+    category: 'Open Source / EdTech',
     description:
       'Contributed to an open-source learning platform built for Noroff students. I implemented the text-to-speech feature in TypeScript, enabling students to listen to course content directly in the browser — improving accessibility and overall learning experience.',
     tags: ['SvelteKit', 'TypeScript', 'Tailwind CSS', 'Skeleton UI', 'OpenAI'],
@@ -110,16 +186,7 @@ export const projectsData = [
     liveDemoLink: 'https://mollify.noroff.dev',
     githubLink: '',
   },
-  {
-    title: 'BeUnique — E-Commerce Store',
-    description:
-      'A clean, fully responsive e-commerce storefront built with React and styled-components. Features product browsing, a shopping cart, and validated checkout forms using react-hook-form and Yup. Routing handled with React Router for a seamless SPA experience.',
-    tags: ['React', 'React Router', 'styled-components', 'react-hook-form'],
-    imageUrl: reUniqueImg,
-    liveDemoLink: 'https://react-ecom-store-psi.vercel.app/',
-    githubLink: 'git@github.com:Ousman37/react-ecom-store.git',
-  },
-] as const;
+];
 
 export const skillsData = [
   {

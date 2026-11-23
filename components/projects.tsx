@@ -21,10 +21,13 @@ const Projects = () => {
           <Project
             key={index}
             title={project.title}
+            category={project.category}
             description={project.description}
             liveDemoLink={project.liveDemoLink}
             githubLink={project.githubLink}
             imageUrl={project.imageUrl.src}
+            imageAlt={project.imageAlt}
+            imagePosition={project.imagePosition}
             tags={project.tags}
           />
         ))}

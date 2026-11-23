@@ -7,19 +7,25 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi';
 
 type ProjectProps = {
   title: string;
+  category: string;
   description: string;
   liveDemoLink: string;
   githubLink: string;
   imageUrl: string;
+  imageAlt?: string;
+  imagePosition?: string;
   tags: readonly string[];
 };
 
 const Project: React.FC<ProjectProps> = ({
   title,
+  category,
   description,
   liveDemoLink,
   githubLink,
   imageUrl,
+  imageAlt,
+  imagePosition = 'center top',
   tags,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -43,18 +49,25 @@ const Project: React.FC<ProjectProps> = ({
         <div className="relative overflow-hidden h-52 shrink-0 bg-gray-100 dark:bg-white/10">
           <Image
             src={imageUrl}
-            alt={`Screenshot of ${title}`}
+            alt={imageAlt ?? `Screenshot of ${title}`}
             fill
             quality={90}
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, 50vw"
+            style={{ objectPosition: imagePosition }}
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
 
         {/* Body */}
         <div className="flex flex-col flex-1 p-6 gap-4">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-snug">
-            {title}
-          </h3>
+          <div className="flex flex-col gap-1.5">
+            <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+              {category}
+            </span>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-snug">
+              {title}
+            </h3>
+          </div>
 
           <p className="text-sm leading-relaxed text-gray-600 dark:text-white/65 flex-1">
             {description}
